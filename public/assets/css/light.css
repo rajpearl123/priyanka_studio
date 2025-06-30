@@ -1,0 +1,302 @@
+:root .light {
+    --fw-light: 400;
+    /* Primary Color */
+    --color-one: #B90808;
+    --color-one-rgb: 185, 8, 8;
+    /* Text Color */
+    --color-two: #585858;
+    --color-two-rgb: 88, 88, 88;
+    /* Body BG */
+    --color-dark-one: #FFFFFF;
+    --color-dark-one-rgb: 255, 255, 255;
+    /* Hero BG */
+    --color-dark-two: #FAFAFA;
+    --color-dark-two-rgb: 250, 250, 250;
+    --color-dark-three: #F2F2F2;
+    --color-dark-three-rgb: 242, 242, 242;
+    --color-dark-four: #F5F5F5;
+    --color-dark-four-rgb: 245, 245, 245;
+    --color-dark-five: #DDDDDD;
+    --color-dark-five-rgb: 221, 221, 221;
+    --color-dark-six: #272727;
+    --color-dark-six-rgb: 39, 39, 39;
+    --color-dark-seven: #DDDDDD;
+    --color-dark-seven-rgb: 221, 221, 221;
+    --color-dark-eight: #343434;
+    --color-dark-eight-rgb: 52, 52, 52;
+    --color-dark-nine: #DDDDDD;
+    --color-dark-nine-rgb: 221, 221, 221;
+    --color-dark-ten: #444444;
+    --color-dark-ten-rgb: 68, 68, 68;
+    --color-dark-eleven: #495060;
+    --color-dark-eleven-rgb: 73, 80, 96;
+    --color-dark-twelve: #FAFAFA;
+    --color-dark-twelve-rgb: 250, 250, 250;
+    --color-dark-thirteen: #F4F4F4;
+    --color-dark-thirteen-rgb: 244, 244, 244;
+    --color-dark-fourteen: #FAFAFA;
+    --color-dark-fourteen-rgb: 250, 250, 250;
+    --color-dark-fifteen: #F5F5F5;
+    --color-dark-fifteen-rgb: 245, 245, 245;
+    --color-white: #000000;
+    --color-white-rgb: 0, 0, 0;
+    --color-black: #FFFFFF;
+    --color-black-rgb: 255, 255, 255;
+    --color-muted: #4E4E4E;
+    --color-muted-rgb: 78, 78, 78;
+    --link-color: #000000;
+    --link-color-hover: #B90808;
+    --gradient-two: linear-gradient(90deg, var(--color-dark-thirteen) 0%, var(--color-dark-one) 100%);
+    --gradient-two-alt: linear-gradient(90deg, var(--color-dark-one) 0%, var(--color-dark-thirteen) 100%);
+    --gradient-two-180: linear-gradient(180deg, var(--color-dark-thirteen) 0%, var(--color-dark-one) 100%);
+    --gradient-two-180-alt: linear-gradient(180deg, var(--color-dark-one) 0%, var(--color-dark-thirteen) 100%);
+}
+
+:root .light.theme-style--orange {
+    --color-one: #F85623;
+    --color-one-rgb: 248, 86, 35;
+    --link-color: #000000;
+    --link-color-hover: #F85623;
+}
+
+:root .light.theme-style--gradient {
+    --color-one: #57E2D0;
+    --color-one-rgb: 87, 226, 208;
+    --link-color: #000000;
+    --link-color-hover: #57E2D0;
+}
+
+:root .light.theme-style--olive {
+    --color-one: #A6A182;
+    --color-one-rgb: 166, 161, 130;
+    --link-color: #000000;
+    --link-color-hover: #A6A182;
+}
+
+.bg-black.light {
+    background-color: var(--color-black) !important;
+}
+
+.light .logo a.light_logo {
+    display: none;
+}
+
+.light .logo a.dark_logo {
+    display: inline-block;
+}
+
+.light .wptb-item--icon .light-icon {
+    display: none;
+}
+
+.light .wptb-item--icon .dark-icon {
+    display: block;
+}
+
+.light .both-version.wptb-item-layer img:first-child {
+    display: none;
+}
+
+.light .both-version.wptb-item-layer img+img {
+    display: block;
+}
+
+.light .mr_menu h6,
+.light .wptb-heading .wptb-item--subtitle,
+.light .aside_info_wrapper .wptb-icon-box1.style2 .wptb-item--icon,
+.light .wptb-icon-box1.style2 .wptb-item--description a:not(:hover) {
+    color: var(--color-two);
+}
+
+.light .wptb-slider.style1 .social-box.style-oval ul li a,
+.light .wptb-icon-box6 .wptb-item--title a,
+.light .wptb-blog-grid1 .wptb-item--inner .wptb-item--author a:not(:hover),
+.light .wptb-swiper-navigation.style2 .wptb-swiper-arrow {
+    color: var(--color-white);
+}
+
+.light input[type="submit"]:hover,
+.light .wptb-about-one .round-button .btn:not(:hover),
+.light .wptb-about-two .round-button .btn:not(:hover),
+.light .wptb-slider.style2 .wptb-left-pane .logo h6,
+.light .wptb-slider.style1 .social-box.style-oval ul li a:hover,
+.light .wptb-slider.style2 .wptb-swiper-navigation.style3 .wptb-swiper-arrow,
+.light .wptb-slider.style3 .wptb-swiper-navigation.style3 .wptb-swiper-arrow,
+.light .wptb-slider.style5 .wptb-swiper-navigation.style2 .wptb-swiper-arrow,
+.light .wptb-slider.style6 .wptb-heading .btn-two.white-opacity,
+.light .wptb-slider.style13 .wptb-swiper-navigation.style1 .wptb-swiper-arrow,
+.light .wptb-album-one .grid-item .wptb-item--meta h4 a:not(:hover),
+.light .wptb-album-one .grid-item .wptb-item--meta p,
+.light .wptb-packages1.active .wptb-item--inner .wptb-item--button .btn,
+.light .wptb-packages1:hover .wptb-item--inner .wptb-item--button .btn,
+.light .wptb-icon-box5.active .wptb-item--description,
+.light .wptb-icon-box5:hover .wptb-item--description,
+.light .footer .newsletter-form .form-control,
+.light .footer .newsletter-form button.btn,
+.light .wptb-testimonial-one .wptb-swiper-navigation.style1 .wptb-swiper-arrow {
+    color: #ffffffba;
+}
+
+
+/* Background CSS */
+
+.light .wptb-packages1.active .wptb-item--inner .wptb-item--button .btn,
+.light .wptb-packages1:hover .wptb-item--inner .wptb-item--button .btn {
+    background-color: var(--color-one);
+}
+
+.light .wptb-slider.style2 .wptb-swiper-dots.style2 .swiper-pagination-bullet:before,
+.light .wptb-slider.style3 .wptb-swiper-dots.style2 .swiper-pagination-bullet:before,
+.light .wptb-contact-form.style2 .form-control {
+    background-color: var(--color-black);
+}
+
+.light .wptb-slider.style2 .wptb-swiper-dots.style2::before,
+.light .wptb-slider.style3 .wptb-swiper-dots.style2::before,
+.light .wptb-slider.style2 .wptb-swiper-dots.style2::after,
+.light .wptb-slider.style3 .wptb-swiper-dots.style2::after {
+    background-color: rgba(var(--color-black-rgb), 0.3);
+}
+
+.light .wptb-slider.style5 .btn-two.gray,
+.light .wptb-slider.style5 .btn-two.white-opacity,
+.light .wptb-slider.style6 .wptb-heading .btn-two.white-opacity,
+.light .wptb-slider.style14 .wptb-heading .btn-two.white-opacity {
+    background-color: rgba(var(--color-black-rgb), 0.10);
+}
+
+.light .wptb-slider .mr_menu_toggle,
+.light .wptb-slider .aside_open {
+    background-color: var(--color-dark-five);
+}
+
+.light .wptb-slider .mr_menu_toggle span,
+.light .wptb-slider .aside_open span {
+    background-color: #151515;
+}
+
+.light.theme-style--olive .wptb-icon-box7.active,
+.light.theme-style--olive .wptb-icon-box7:hover {
+    background-color: rgba(var(--color-black-rgb), 1);
+    box-shadow: 0px 50px 40px 15px rgba(var(--color-black-rgb), 0.06);
+}
+
+.light .wptb-slider.style1 .wptb-heading .wptb-item--title.text-outline {
+    -webkit-text-stroke-color: #DDDDDD;
+}
+
+.light .form-control {
+    background-color: rgba(var(--color-dark-five-rgb), 0.3);
+}
+
+.light .form-control:focus {
+    background-color: rgba(var(--color-dark-five-rgb), 0);
+}
+
+.light .footer .newsletter-form .form-control {
+    background-color: rgba(var(--color-dark-six-rgb), 0.30);
+}
+
+.light .wptb-about-two {
+    background-color: #FCFCFC;
+}
+
+.light .wptb-agency-experience {
+    background-image: url('../images/bg-13-light.jpg') !important;
+}
+
+
+/* Index-4 */
+
+.light.theme-style--gradient {
+    background-color: var(--color-black);
+    background-image: url('../images/bg-14-light.png');
+}
+
+.light.theme-style--gradient .wptb-heading-two .wptb-item--subtitle {
+    background-color: #DDF9F6;
+}
+
+.light .wptb-gallery-box::before {
+    background: linear-gradient(180deg, rgb(255, 255, 255, 1) 0%, rgb(255, 255, 255, 0.8) 50%, rgb(255, 255, 255, 0) 100%);
+}
+
+.light .wptb-gallery-box::after {
+    background: linear-gradient(180deg, rgb(255, 255, 255, 0) 0%, rgb(255, 255, 255, 0.8) 50%, rgb(255, 255, 255, 1) 100%);
+}
+
+.light .grid_lines .grid_line {
+    background-color: rgba(221, 221, 221, 0.6);
+}
+
+.light .wptb-contact-form .wptb-form--wrapper {
+    background: -webkit-linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%);
+    background: -moz-linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%);
+    background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%);
+}
+
+.light .wptb-contact-form .wptb-form--wrapper::before {
+    background: -webkit-linear-gradient(180deg, #FFFFFF 0%, #F2F2F2 100%);
+    background: -moz-linear-gradient(180deg, #FFFFFF 0%, #F2F2F2 100%);
+    background: linear-gradient(180deg, #FFFFFF 0%, #F2F2F2 100%);
+}
+
+.light .wptb-packages1 .wptb-item--inner::before {
+    background: -webkit-linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%);
+    background: -moz-linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%);
+    background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%);
+}
+
+.light .wptb-packages1 .wptb-item--inner::after {
+    background: -webkit-linear-gradient(180deg, #FFFFFF 0%, #F2F2F2 100%);
+    background: -moz-linear-gradient(180deg, #FFFFFF 0%, #F2F2F2 100%);
+    background: linear-gradient(180deg, #FFFFFF 0%, #F2F2F2 100%);
+}
+
+
+/* Border CSS */
+
+.light .social-box.style-oval ul li a:hover .light .wptb-slider.style1 .social-box.style-oval ul li a:hover {
+    border-color: var(--color-one);
+}
+
+.light .wptb-slider.style2 .wptb-swiper-dots.style2 .swiper-pagination-bullet.swiper-pagination-bullet-active,
+.light .wptb-slider.style3 .wptb-swiper-dots.style2 .swiper-pagination-bullet.swiper-pagination-bullet-active,
+.light .wptb-slider.style5 .wptb-heading .btn.creative:not(:hover):before,
+.light .wptb-slider.style5 .wptb-heading .btn.creative:not(:hover)::after,
+.light .wptb-slider.style5 .wptb-heading .btn.creative .btn-wrap:not(:hover)::before,
+.light .wptb-slider.style5 .wptb-heading .btn.creative .btn-wrap:not(:hover)::after,
+.light .wptb-slider.style6 .wptb-heading .btn.creative:not(:hover):before,
+.light .wptb-slider.style6 .wptb-heading .btn.creative:not(:hover)::after,
+.light .wptb-slider.style6 .wptb-heading .btn.creative .btn-wrap:not(:hover)::before,
+.light .wptb-slider.style6 .wptb-heading .btn.creative .btn-wrap:not(:hover)::after,
+.light .wptb-slider.style14 .wptb-heading .btn.creative:not(:hover):before,
+.light .wptb-slider.style14 .wptb-heading .btn.creative:not(:hover)::after,
+.light .wptb-slider.style14 .wptb-heading .btn.creative .btn-wrap:not(:hover)::before,
+.light .wptb-slider.style14 .wptb-heading .btn.creative .btn-wrap:not(:hover)::after {
+    border-color: var(--color-black);
+}
+
+.aside_info_wrapper .wptb-icon-box1.style2 .wptb-item--icon {
+    border-color: var(--color-two);
+}
+
+.light .footer .newsletter-form .form-control {
+    border-color: var(--color-dark-seven-fixed);
+}
+
+.light .footer .newsletter-form button.btn {
+    border-color: var(--color-dark-seven-fixed);
+}
+
+.light .wptb-slider.style2 .social-box.style-oval ul li a {
+    border-color: var(--color-white-fixed);
+    color: var(--color-white-fixed);
+}
+
+.light .wptb-slider .btn.creative::before,
+.light .wptb-slider .btn.creative::after,
+.light .wptb-slider .btn.creative .btn-wrap::before,
+.light .wptb-slider .btn.creative .btn-wrap::after {
+    border-color: var(--color-black);
+}
