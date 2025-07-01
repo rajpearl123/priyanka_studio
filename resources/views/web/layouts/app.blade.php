@@ -1,3 +1,5 @@
+@php $websiteSetting = App\Models\WebsiteSetting::first(); @endphp
+
 <!DOCTYPE html>
 <html lang="zxx">
 
