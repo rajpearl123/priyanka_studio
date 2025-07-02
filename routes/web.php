@@ -13,6 +13,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/gallery', 'gallery')->name('gallery');
     Route::get('/blog', 'blog')->name('blog');
     Route::get('/blog-detail', 'blogDetails')->name('blogDetails');
+    Route::get('/blogdetail/{slug}', 'blogdetail')->name('blogdetail');
 
     // Route::get('/blogs/category/{category?}', 'blog')->name('blogs');
     // Route::get('/blogdetail/{slug}', 'blogdetail')->name('blogdetail');

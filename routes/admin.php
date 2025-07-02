@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\Subscribers\SubscriberController;
 use App\Http\Controllers\Admin\BusinessSetting\BusinessPagesController;
 use App\Http\Controllers\Admin\BusinessSetting\ContactUsSubmission;
 use App\Http\Controllers\Admin\BusinessSetting\WebsiteSettingController;
+use App\Http\Controllers\Admin\BlogController;
+
 
 // Public routes
 Route::prefix('admin')->group(function () {
@@ -23,7 +25,24 @@ Route::prefix('admin')->group(function () {
             return view('dashboard');
         })->name('admin.dashboard');
 
-
+        Route::middleware(['auth.admin'])->name('admin.')->group(function () {
+            // Blogs routes
+            Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
+            Route::get('/blogs/create', [BlogController::class, 'create'])->name('blogs.create');
+            Route::post('/blogs', [BlogController::class, 'store'])->name('blogs.store');
+            Route::get('/blogs/{id}/edit', [BlogController::class, 'edit'])->name('blogs.edit');
+            Route::put('/blogs/{id}', [BlogController::class, 'update'])->name('blogs.update');
+            Route::delete('/blogs/{id}', [BlogController::class, 'destroy_blog'])->name('blogs.destroy');
+            Route::post('/blog/toggle-visibility', [BlogController::class, 'toggleVisibility'])->name('blog.toggleVisibility');
+        
+            // Blog categories routes
+            Route::get('/blog-categories', [BlogController::class, 'index_category'])->name('blog-categories.index');
+            Route::get('/blog-categories/create', [BlogController::class, 'create_category'])->name('blog-categories.create');
+            Route::post('/blog-categories', [BlogController::class, 'store_category'])->name('blog-categories.store');
+            Route::get('/blog-categories/{blogCategory}/edit', [BlogController::class, 'edit_category'])->name('blog-categories.edit');
+            Route::put('/blog-categories/{blogCategory}', [BlogController::class, 'update_category'])->name('blog-categories.update');
+            Route::delete('/blog-categories/{blogCategory}', [BlogController::class, 'destroy'])->name('blog-categories.destroy');
+        });
         Route::get('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 
         Route::controller(HomepageController::class)->group(function () {
@@ -39,7 +58,8 @@ Route::prefix('admin')->group(function () {
             Route::get('subscribers', 'subscribers')->name('admin.subscribers');
         });
 
-        Route::controller(ContactUsSubmission::class)->group(function () {
+
+          Route::controller(ContactUsSubmission::class)->group(function () {
             Route::get('contact-list', 'contactList')->name('admin.contact-list');
             Route::delete('/contacts/{id}', 'destroy')->name('admin.contacts.destroy');
             Route::get('contact-info/edit', 'edit')->name('admin.contact-info.edit');
