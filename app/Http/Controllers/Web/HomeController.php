@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\ContactUs;
 use App\Models\ContactInfo;
 use Illuminate\Support\Facades\Log;
+use App\Models\Blog;
 
 use Illuminate\Http\Request;
 
@@ -38,12 +39,18 @@ class HomeController extends Controller
 
     public function blog()
     {
-        return view('web.blog');
+        $blog = Blog::orderBy('publish_date', 'desc')->paginate(9); 
+               return view('web.blog', compact('blog'));
     }
 
     public function blogDetails()
     {
-        return view('web.blog_deatail');
+        $blog= Blog::where('slug', request()->slug)->firstOrFail();
+        $relatedBlogs = Blog::where('id', '!=', $blog->id)
+            ->orderBy('publish_date', 'desc')
+            ->take(3)
+            ->get();
+        return view('web.blog_deatail', compact('blog', 'relatedBlogs'));
     }
 
     public function subscribeStore(Request $request)

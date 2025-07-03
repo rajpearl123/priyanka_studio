@@ -1,4 +1,5 @@
-@extends('admin.layouts.app')
+@extends('admin.layouts.admin')
+@section('title', 'Blog Category Edit')
 
 @section('content')
 <div class="main-content">
