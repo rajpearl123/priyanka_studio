@@ -38,6 +38,17 @@
 
                     </ul>
                 </li>
+
+                <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="bx bx-image"></i>
+                            <span key="t-ecommerce">Page Banner Setting</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li><a href="{{ route('admin.page_banner.index') }}" key="t-products"><i
+                                        class="bx bx-list-ul"></i> Banner List</a></li>
+                        </ul>
+                    </li>
                 @if ($admin && ($admin->isSuperAdmin() || $admin->hasPermission('Subscribers')))
                     <li>
                         <a href="{{ route('admin.subscribers') }}">
