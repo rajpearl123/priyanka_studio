@@ -7,12 +7,17 @@ use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SubscriberNotification;
 use App\Utils\ViewPath;
+use App\Models\Banner;
+use App\Models\Aboutus;
+
 use App\Models\Subscriber;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\DB;
 use App\Models\ContactUs;
 use App\Models\ContactInfo;
+use App\Models\WhyChooseUs;
+use App\Models\Chooseus;
 use Illuminate\Support\Facades\Log;
 use App\Models\Blog;
 
@@ -23,12 +28,18 @@ class HomeController extends Controller
     public function home()
     {
         $contactInfo = ContactInfo::first();
-        return view('welcome', compact('contactInfo'));
+        $banners = Banner::all();
+        return view('welcome', compact('contactInfo', 'banners'));
     }
 
     public function about_us()
     {
-        return view('web.about_us');
+        $features = WhyChooseUs::all();
+        $items = Chooseus::all();
+        $section = Aboutus::first();
+
+        
+        return view('web.about_us', compact('features', 'items', 'section'));
     }
 
 

@@ -6,8 +6,10 @@ use App\Http\Controllers\Admin\Home\HomepageController;
 use App\Http\Controllers\Admin\Subscribers\SubscriberController;
 use App\Http\Controllers\Admin\BusinessSetting\BusinessPagesController;
 use App\Http\Controllers\Admin\BusinessSetting\ContactUsSubmission;
+use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\BusinessSetting\WebsiteSettingController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\AboutusController;
 
 
 // Public routes
@@ -34,7 +36,7 @@ Route::prefix('admin')->group(function () {
             Route::put('/blogs/{id}', [BlogController::class, 'update'])->name('blogs.update');
             Route::delete('/blogs/{id}', [BlogController::class, 'destroy_blog'])->name('blogs.destroy');
             Route::post('/blog/toggle-visibility', [BlogController::class, 'toggleVisibility'])->name('blog.toggleVisibility');
-        
+
             // Blog categories routes
             Route::get('/blog-categories', [BlogController::class, 'index_category'])->name('blog-categories.index');
             Route::get('/blog-categories/create', [BlogController::class, 'create_category'])->name('blog-categories.create');
@@ -45,21 +47,21 @@ Route::prefix('admin')->group(function () {
         });
         Route::get('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 
-        Route::controller(HomepageController::class)->group(function () {
-            Route::get('/homepage', 'index_banner')->name('admin.banners.index');
-            Route::get('/banners/create', 'create_banner')->name('admin.banners.create');
-            Route::post('/banners/store', 'store_banner')->name('admin.banners.store');
-            Route::get('/banners/edit/{banner}', 'edit_banner')->name('admin.banners.edit');
-            Route::post('/banners/update/{banner}', 'update_banner')->name('admin.banners.update');
-            Route::delete('/banners/delete/{banner}', 'destroy_banner')->name('admin.banners.destroy');
-        });
+        // Route::controller(HomepageController::class)->group(function () {
+        //     Route::get('/homepage', 'index_banner')->name('admin.banners.index');
+        //     Route::get('/banners/create', 'create_banner')->name('admin.banners.create');
+        //     Route::post('/banners/store', 'store_banner')->name('admin.banners.store');
+        //     Route::get('/banners/edit/{banner}', 'edit_banner')->name('admin.banners.edit');
+        //     Route::post('/banners/update/{banner}', 'update_banner')->name('admin.banners.update');
+        //     Route::delete('/banners/delete/{banner}', 'destroy_banner')->name('admin.banners.destroy');
+        // });
 
         Route::controller(SubscriberController::class)->group(function () {
             Route::get('subscribers', 'subscribers')->name('admin.subscribers');
         });
 
 
-          Route::controller(ContactUsSubmission::class)->group(function () {
+        Route::controller(ContactUsSubmission::class)->group(function () {
             Route::get('contact-list', 'contactList')->name('admin.contact-list');
             Route::delete('/contacts/{id}', 'destroy')->name('admin.contacts.destroy');
             Route::get('contact-info/edit', 'edit')->name('admin.contact-info.edit');
@@ -105,5 +107,31 @@ Route::prefix('admin')->group(function () {
                 Route::get('banner-delete/{id}', 'bannerDelete')->name('bannerDelete');
             });
         });
+
+
+        Route::get('/banners', [BannerController::class, 'index'])->name('admin.banners.index');
+        Route::get('/banners/create', [BannerController::class, 'create'])->name('admin.banners.create');
+        Route::post('/banners/store', [BannerController::class, 'store'])->name('admin.banners.store');
+        Route::get('/banners/edit/{banner}', [BannerController::class, 'edit'])->name('admin.banners.edit');
+        Route::post('/banners/update/{banner}', [BannerController::class, 'update'])->name('admin.banners.update');
+        Route::delete('/banners/delete/{banner}', [BannerController::class, 'destroy'])->name('admin.banners.destroy');
+
+
+
+        Route::get('/about-us', [AboutusController::class, 'index'])->name('admin.about.index');
+        Route::post('/about-us', [AboutusController::class, 'update'])->name('admin.about.update');
+        Route::get('why-choose-us', [AboutusController::class, 'section_index'])->name('admin.why_choose_us.index');
+        Route::get('why-choose-us/create', [AboutusController::class, 'section_create'])->name('admin.why_choose_us.create');
+        Route::post('why-choose-us', [AboutusController::class, 'section_store'])->name('admin.why_choose_us.store');
+        Route::get('why-choose-us/{id}/edit', [AboutusController::class, 'section_edit'])->name('admin.why_choose_us.edit');
+        Route::put('why-choose-us/{id}', [AboutusController::class, 'section_update'])->name('admin.why_choose_us.update');
+        Route::delete('why-choose-us/{id}', [AboutusController::class, 'section_destroy'])->name('admin.why_choose_us.destroy');
+
+        Route::get('/choose-us', [AboutusController::class, 'choose_us_index'])->name('admin.choose_us.index');
+        Route::get('/choose-us/create', [AboutusController::class, 'choose_us_create'])->name('admin.choose_us.create');
+        Route::post('/choose-us', [AboutusController::class, 'choose_us_store'])->name('admin.choose_us.store');
+        Route::get('/choose-us/{whyChooseUs}/edit', [AboutusController::class, 'choose_us_edit'])->name('admin.choose_us.edit');
+        Route::put('/choose-us/{whyChooseUs}', [AboutusController::class, 'choose_us_update'])->name('admin.choose_us.update');
+        Route::delete('/choose-us/{whyChooseUs}', [AboutusController::class, 'choose_us_destroy'])->name('admin.choose_us.destroy');
     });
 });

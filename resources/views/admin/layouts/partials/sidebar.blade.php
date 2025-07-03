@@ -13,31 +13,31 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-                 <li>
-                        <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="bx bx-category"></i>
-                            <span key="t-ecommerce">Blog Category Management</span>
-                        </a>
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="{{ route('admin.blog-categories.index') }}" key="t-products"><i
-                                        class="bx bx-list-ul"></i> Category List</a></li>
-                            <li><a href="{{ route('admin.blog-categories.create') }}" key="t-products"><i
-                                        class="bx bx-plus"></i> Add Category</a></li>
-                        </ul>
-                    </li>
-                     <li>
-                        <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="bx bx-news"></i>
-                            <span key="t-ecommerce">Blog Setting</span>
-                        </a>
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="{{ route('admin.blogs.index') }}" key="t-products"><i
-                                        class="bx bx-list-ul"></i> Blog List</a></li>
-                            <li><a href="{{ route('admin.blogs.create') }}" key="t-products"><i class="bx bx-plus"></i>
-                                    Add Blog</a></li>
-                         
-                        </ul>
-                    </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-category"></i>
+                        <span key="t-ecommerce">Blog Category Management</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('admin.blog-categories.index') }}" key="t-products"><i
+                                    class="bx bx-list-ul"></i> Category List</a></li>
+                        <li><a href="{{ route('admin.blog-categories.create') }}" key="t-products"><i
+                                    class="bx bx-plus"></i> Add Category</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-news"></i>
+                        <span key="t-ecommerce">Blog Setting</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('admin.blogs.index') }}" key="t-products"><i class="bx bx-list-ul"></i>
+                                Blog List</a></li>
+                        <li><a href="{{ route('admin.blogs.create') }}" key="t-products"><i class="bx bx-plus"></i>
+                                Add Blog</a></li>
+
+                    </ul>
+                </li>
                 @if ($admin && ($admin->isSuperAdmin() || $admin->hasPermission('Subscribers')))
                     <li>
                         <a href="{{ route('admin.subscribers') }}">
@@ -91,7 +91,7 @@
                         </ul>
                     </li>
                 @endif
-                {{-- @if ($admin && $admin->isSuperAdmin())
+                @if ($admin && $admin->isSuperAdmin())
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="bx bx-slideshow"></i>
@@ -105,7 +105,24 @@
                         </ul>
                     </li>
                 @endif
+
                 @if ($admin && $admin->isSuperAdmin())
+                    <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="bx bx-info-square"></i>
+                            <span key="t-ecommerce">Aboutus page Management</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li><a href="{{ route('admin.about.index') }}" key="t-products"><i class="bx bx-book"></i>
+                                    About Section</a></li>
+                            {{-- <li><a href="{{ route('admin.why_choose_us.index') }}" key="t-products"><i
+                                        class="bx bx-check-shield"></i> Why Choose us Section</a></li> --}}
+                            <li><a href="{{ route('admin.choose_us.index') }}" key="t-products"><i
+                                        class="bx bx-check-circle"></i> Choose us Section</a></li>
+                        </ul>
+                    </li>
+                @endif
+                {{-- @if ($admin && $admin->isSuperAdmin())
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="bx bx-image"></i>
@@ -245,22 +262,7 @@
                         </ul>
                     </li>
                 @endif
-                @if ($admin && $admin->isSuperAdmin())
-                    <li>
-                        <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="bx bx-info-square"></i>
-                            <span key="t-ecommerce">Aboutus page Management</span>
-                        </a>
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="{{ route('admin.about.index') }}" key="t-products"><i
-                                        class="bx bx-book"></i> About Section</a></li>
-                            <li><a href="{{ route('admin.why_choose_us.index') }}" key="t-products"><i
-                                        class="bx bx-check-shield"></i> Why Choose us Section</a></li>
-                            <li><a href="{{ route('admin.choose_us.index') }}" key="t-products"><i
-                                        class="bx bx-check-circle"></i> Choose us Section</a></li>
-                        </ul>
-                    </li>
-                @endif
+                
                 @if ($admin && $admin->isSuperAdmin())
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">

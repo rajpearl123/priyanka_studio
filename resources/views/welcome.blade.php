@@ -16,27 +16,29 @@
                     <!-- swiper slides -->
                     <div class="swiper-wrapper">
                         <!-- Slide Item -->
-                        <div class="swiper-slide">
-                            <div class="wptb-slider--item">
-                                <div class="wptb-slider--image"
-                                    style="background-image: url('{{ asset('assets/images/1.avif') }}');"></div>
-                                <div class="wptb-slider--inner">
+                        @foreach ($banners as $key => $banner)
+                            <div class="swiper-slide">
+                                <div class="wptb-slider--item">
+                                    <div class="wptb-slider--image"
+                                        style="background-image: url('{{ asset($banner->image) }}');"></div>
+                                    <div class="wptb-slider--inner">
 
 
-                                    <div class="wptb-heading">
-                                        <div class="wptb-item--inner">
-                                            <h1 class="wptb-item--title">Priyanka Jason
-                                            </h1>
-                                            <h6 class="wptb-item--subtitle">Branding</h6>
+                                        <div class="wptb-heading">
+                                            <div class="wptb-item--inner">
+                                                <h1 class="wptb-item--title">{{ $banner->title }}
+                                                </h1>
+                                                <h6 class="wptb-item--subtitle">{{ $banner->subtitle }}</h6>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        @endforeach
                         <!-- End Slide Item -->
 
                         <!-- Slide Item -->
-                        <div class="swiper-slide">
+                        {{-- <div class="swiper-slide">
                             <div class="wptb-slider--item">
                                 <div class="wptb-slider--image"
                                     style="background-image: url('{{ asset('assets/images/5.webp') }}');"></div>
@@ -69,7 +71,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <!-- End Slide Item -->
                     </div>
                 </div>
@@ -91,7 +93,7 @@
             </section>
 
             <!-- About Priyanka
-                     -->
+                         -->
             <section class="wptb-about-two">
                 <div class="container">
                     <!-- Services -->
@@ -878,7 +880,8 @@
                                         <div class="wptb-item--holder">
                                             <h3 class="wptb-item--title">Book Us</h3>
                                             <p class="wptb-item--description">{{ $contactInfo->phone ?? 'N/A' }}</p>
-                                            <a href="{{ $contactInfo->phone ?? 'N/A' }}" class="wptb-item--link">Call Now</a>
+                                            <a href="{{ $contactInfo->phone ?? 'N/A' }}" class="wptb-item--link">Call
+                                                Now</a>
                                         </div>
                                     </div>
                                 </div>
