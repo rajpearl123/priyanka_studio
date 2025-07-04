@@ -10,9 +10,14 @@ use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\BusinessSetting\WebsiteSettingController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\AboutusController;
+use App\Http\Controllers\Admin\CommentController ;
+
 
 
 // Public routes
+
+Route::post('/blogs/{blog}/comments', [CommentController::class, 'store'])->name('comments.store');
+
 Route::prefix('admin')->group(function () {
     Route::get('/login', function () {
         return view('admin.auth.login');
@@ -23,9 +28,11 @@ Route::prefix('admin')->group(function () {
 
     Route::middleware(['auth.admin'])->group(function () {
 
-        Route::get('/dashboard', function () {
-            return view('dashboard');
-        })->name('admin.dashboard');
+        // Route::get('/dashboard', function () {
+        //     return view('dashboard');
+        // })->name('admin.dashboard');
+
+        Route::get('/dashboard', [AdminAuthController::class, 'dashboard_index'])->name('admin.dashboard');
 
         Route::middleware(['auth.admin'])->name('admin.')->group(function () {
             // Blogs routes
@@ -60,6 +67,9 @@ Route::prefix('admin')->group(function () {
             Route::get('subscribers', 'subscribers')->name('admin.subscribers');
         });
 
+        Route::get('/comments', [CommentController::class, 'index'])->name('admin.comments.index');
+        Route::patch('/comments/{id}/approve', [CommentController::class, 'approve'])->name('admin.comments.approve');
+        Route::delete('/comments/{id}', [CommentController::class, 'destroy'])->name('admin.comments.destroy');
 
         Route::controller(ContactUsSubmission::class)->group(function () {
             Route::get('contact-list', 'contactList')->name('admin.contact-list');

@@ -51,7 +51,7 @@
                     </div> --}}
 
                     <!-- Graph Section -->
-                    {{-- <div class="card">
+                    <div class="card">
                         <div class="card-body">
                             <div class="d-flex align-items-start">
                                 <div class="me-2">
@@ -72,10 +72,10 @@
                                 <canvas id="subscribersChart" style="width: 100%; height: 100%;"></canvas>
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
 
                     <!-- Popular Posts Section -->
-                    {{-- <div class="card">
+                    <div class="card">
                         <div class="card-body">
                             <div class="d-flex align-items-start">
                                 <div class="me-2">
@@ -111,7 +111,7 @@
                                             </td>
                                             <td>
                                                 <h5 class="font-size-13 text-truncate mb-1">
-                                                    <a href="{{ route('blogdetail', $post->slug) }}" class="text-dark">{{ $post->title }}</a>
+                                                    <a href="{{ route('blogDetails', $post->slug) }}" class="text-dark">{{ $post->title }}</a>
                                                 </h5>
                                                 <p class="text-muted mb-0">{{ $post->created_at->format('d M, Y') }}</p>
                                             </td>
@@ -136,13 +136,13 @@
                                 </table>
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
 
                 <!-- Right Side Section -->
                 <div class="col-xl-4">
                     <!-- Subscribers Section -->
-                    {{-- <div class="card">
+                    <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-wrap align-items-start">
                                 <h5 class="card-title mb-3 me-2">Subscribers</h5>
@@ -170,10 +170,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
 
                     <!-- Queries Section -->
-                    {{-- <div class="card">
+                    <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-wrap align-items-start">
                                 <div class="me-2">
@@ -217,7 +217,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div> <!-- container-fluid -->
@@ -227,7 +227,7 @@
 
     <!-- Include Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
-    {{-- <script>
+    <script>
         document.addEventListener('DOMContentLoaded', function () {
             try {
                 // Debug data
@@ -293,5 +293,5 @@
                 console.error('Error initializing chart:', error);
             }
         });
-    </script> --}}
+    </script>
 @endsection

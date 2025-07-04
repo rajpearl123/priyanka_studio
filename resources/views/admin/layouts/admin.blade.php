@@ -56,6 +56,8 @@
     
 
     <script src="https://cdn.jsdelivr.net/npm/jodit@3.24.3/build/jodit.min.js"></script>
+        <script src="{{url('libs/apexcharts/apexcharts.min.js')}}"></script>
+
         <script src="{{url('libs/jquery/jquery.min.js')}}"></script>
         <script src="{{url('libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{url('libs/metismenu/metisMenu.min.js')}}"></script>
