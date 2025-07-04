@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\AboutusController;
 use App\Http\Controllers\Admin\CommentController ;
 
+use App\Http\Controllers\Admin\PageBannerController;
 
 
 // Public routes
@@ -35,6 +36,9 @@ Route::prefix('admin')->group(function () {
         Route::get('/dashboard', [AdminAuthController::class, 'dashboard_index'])->name('admin.dashboard');
 
         Route::middleware(['auth.admin'])->name('admin.')->group(function () {
+            Route::get('/page_banners', [PageBannerController::class, 'index'])->name('page_banner.index');
+            Route::get('/page_banners/{id}/edit', [PageBannerController::class, 'edit'])->name('page_banner.edit');
+            Route::put('/page_banners/{id}', [PageBannerController::class, 'update'])->name('page_banner.update');
             // Blogs routes
             Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
             Route::get('/blogs/create', [BlogController::class, 'create'])->name('blogs.create');

@@ -1,8 +1,12 @@
+@php
+    $websiteSetting = \App\Models\WebsiteSetting::first();
+    $banner = getBanner('blogs');
+@endphp
 @extends('web.layouts.app')
 
 @section('content')
     <div class="wptb-page-heading">
-        <div class="wptb-item--inner" style="background-image: url('../assets/img/background/page-header-bg-2.jpg');">
+        <div class="wptb-item--inner" style="background-image: url('{{ $banner && $banner->banner_img ? asset('uploads/page_banners/' . $banner->banner_img) : asset('assets/web-assets/images/circle-cameras-film_23-2147852399.jpg') }}'); background-size: cover;">
             <div class="wptb-item-layer wptb-item-layer-one">
                 <img src="images/4.png" alt="img">
             </div>

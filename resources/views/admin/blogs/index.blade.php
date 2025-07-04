@@ -64,7 +64,7 @@
                                         @foreach($blogs as $key => $blog)
                                         <tr class="text-center">
                                             <td>{{ $key + 1 }}</td>
-                                            <td class="text-primary font-weight-bold"><a href="{{ route('blogdetail', $blog->slug) }}">{{ $blog->title }}</a></td>
+                                            <td class="text-primary font-weight-bold"><a href="{{ route('blogDetails', $blog->slug) }}">{{ $blog->title }}</a></td>
                                             <td class="text-info">{{ $blog->author }}</td>
                                             <td class="text-success">
                                                 {{ $blog->category->name ?? 'N/A' }}
