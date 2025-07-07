@@ -21,16 +21,16 @@
                 <div class="header_center_part d-none d-xl-block">
                     <div class="mainnav">
                         <ul class="main-menu">
-                            <li class="menu-item active"><a href="index.html">Home</a></li>
+                            <li class="menu-item active"><a href="{{ url('/') }}">Home</a></li>
                             <li class="menu-item"><a href="{{ route('about_us') }}">About Us</a></li>
                             <li class="menu-item menu-item-has-children">
                                 <a href="#">Services</a>
                                 <ul class="sub-menu" data-lenis-prevent="">
-                                    <li class="menu-item"><a href="services.html">Wedding</a></li>
-                                    <li class="menu-item"><a href="events.php">Events</a></li>
-                                    <li class="menu-item"><a href="video-production.php">Video Production</a></li>
-                                    <li class="menu-item"><a href="kids-photography.php">Kids Photography</a></li>
-                                    <li class="menu-item"><a href="trends.php">Others</a></li>
+                                    <li class="menu-item"><a href="{{ route('services', ['slug' => 'studio_photography']) }}">Studio Photography</a></li>
+                                    <li class="menu-item"><a href="{{ route('services', ['slug' => 'wedding_photography']) }}">Wedding Photography</a></li>
+                                    <li class="menu-item"><a href="{{ route('services', ['slug' => 'newborn_photography']) }}">Newborn Photography</a></li>
+                                    <li class="menu-item"><a href="{{ route('services', ['slug' => 'indoor_photography']) }}">Indoor Photography</a></li>
+                                    <li class="menu-item"><a href="{{ route('services', ['slug' => 'outdoor_photography']) }}">Outdoor Photography</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item"><a href="{{ route('gallery') }}">Gallery</a></li>

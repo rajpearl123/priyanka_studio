@@ -148,4 +148,31 @@ class HomeController extends Controller
 
         return redirect()->back();
     }
+
+        public function services($slug)
+    {
+        $banner;
+        $title = "";
+        if ($slug == 'studio_photography') {
+            $title = "Studio Photography";
+            $banner = getBanner('wedding ');
+        } elseif ($slug == 'wedding_photography') {
+            $title = "Wedding Photography";
+            $banner = getBanner('events ');
+        } elseif ($slug == 'newborn_photography') {
+            $title = "Newborn Photography";
+            $banner = getBanner('video_prod');
+        } elseif ($slug == 'indoor_photography') {
+            $title = "Indoor Photography";
+            $banner = getBanner('kids');
+        } elseif ($slug == 'outdoor_photography') {
+            $title = "Outdoor Photography";
+            $banner = getBanner('product');
+        }
+        // dd($banner );
+        //$homeVideo = HomeVideo::first();
+
+        //$album = Album::where('slug', $slug)->firstOrFail();
+        return view('web.services.service', compact('title', 'banner'));
+    }
 }
