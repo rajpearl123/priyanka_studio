@@ -21,7 +21,7 @@ class ViewPath
     public const TERMS_CONDITIONS = 'web-views.business_pages.terms-conditions';
     public const PRIVACY_POLICY = 'web-views.business_pages.privacy-policy';
     public const REFUND_POLICY = 'web-views.business_pages.refund-policy';
-    public const CONTACT_US = 'web-views.business_pages.contact-us';
+    public const CONTACT_US = 'web.business_pages.contact-us';
     public const CONTACT_MESSAGES = 'web-views.dashboard.contact-messages';
     public const CONTACT_REPLIES = 'web-views.dashboard.replies';
     

@@ -94,7 +94,7 @@
                                                 <th>Id</th>
                                                 <th>Name</th>
                                                 <th>Contact Info</th>
-                                                <th>Phone Number</th>
+                                                {{-- <th>Phone Number</th> --}}
                                                 <th>Subject</th>
                                                 <th>Message</th>
                                                 <th>Created At</th>
@@ -107,7 +107,7 @@
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $contact->name }}</td>
                                                     <td>{{ $contact->email }}</td>
-                                                    <td>{{ $contact->phone }}</td>
+                                                    {{-- <td>{{ $contact->phone }}</td> --}}
                                                     <td>{{ $contact->subject }}</td>
                                                     <td>{{ $contact->message }}</td>
                                                     <td>{{ $contact->created_at->format('d F Y, h:i A') }}</td>

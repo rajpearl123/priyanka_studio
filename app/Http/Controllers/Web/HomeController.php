@@ -38,7 +38,7 @@ class HomeController extends Controller
         $items = Chooseus::all();
         $section = Aboutus::first();
 
-        
+
         return view('web.about_us', compact('features', 'items', 'section'));
     }
 
@@ -50,13 +50,13 @@ class HomeController extends Controller
 
     public function blog()
     {
-        $blog = Blog::orderBy('publish_date', 'desc')->paginate(9); 
-               return view('web.blog', compact('blog'));
+        $blog = Blog::orderBy('publish_date', 'desc')->paginate(9);
+        return view('web.blog', compact('blog'));
     }
 
     public function blogDetails()
     {
-        $blog= Blog::where('slug', request()->slug)->firstOrFail();
+        $blog = Blog::where('slug', request()->slug)->firstOrFail();
         $relatedBlogs = Blog::where('id', '!=', $blog->id)
             ->orderBy('publish_date', 'desc')
             ->take(3)
@@ -95,8 +95,8 @@ class HomeController extends Controller
         $subscriber->email = $request->email;
         $subscriber->save();
 
-        $logoUrl = asset('assets/images/logo1.png');       
-         //dd($logoUrl);
+        $logoUrl = asset('assets/images/logo1.png');
+        //dd($logoUrl);
         Mail::to($subscriber->email)->send(new SubscriberNotification($subscriber, $logoUrl));
         //dd("here");
         Toastr::success('Subscribed Successfully!', 'Success');
@@ -110,7 +110,6 @@ class HomeController extends Controller
             $request->validate([
                 'name' => 'required|string|max:255',
                 'email' => 'required|email:rfc,dns|max:255',
-                'phone' => 'nullable|string|max:255',
                 'subject' => 'nullable|string|max:255',
                 'message' => 'required|string',
             ]);
@@ -118,11 +117,11 @@ class HomeController extends Controller
             // Save to Database
             ContactUs::create($request->all());
 
-            $logoUrl = asset('assets/web-assets/images/email_logo.png');
+            $logoUrl = asset('assets/web/images/logo1.png');
             $data = [
                 'name' => $request->name,
                 'email' => $request->email,
-                'phone' => $request->phone ?? 'No Phone',
+
                 'subject' => $request->subject ?? 'No Subject',
                 'userMessage' => $request->message,
                 'logoUrl' => $logoUrl
@@ -149,7 +148,7 @@ class HomeController extends Controller
         return redirect()->back();
     }
 
-        public function services($slug)
+    public function services($slug)
     {
         $banner;
         $title = "";
@@ -175,4 +174,13 @@ class HomeController extends Controller
         //$album = Album::where('slug', $slug)->firstOrFail();
         return view('web.services.service', compact('title', 'banner'));
     }
+
+    public function contactUs()
+    {
+
+        $contactInfo = ContactInfo::first();
+        return view(ViewPath::CONTACT_US, compact('contactInfo'));
+    }
+
+
 }

@@ -865,9 +865,9 @@
                                         <div class="wptb-item--icon"><i class="bi bi-globe"></i></div>
                                         <div class="wptb-item--holder">
                                             <h3 class="wptb-item--title">Our Website</h3>
-                                            <p class="wptb-item--description">www.Priyanka photography.com
+                                            <p class="wptb-item--description">{{ $contactInfo->website_url }}
                                             </p>
-                                            <a href="www.Priyankaphotography.com" class="wptb-item--link">Visit Now</a>
+                                            <a href="{{ $contactInfo->website_url }}" class="wptb-item--link">Visit Now</a>
                                         </div>
                                     </div>
                                 </div>

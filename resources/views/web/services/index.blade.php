@@ -2,7 +2,7 @@
 $websiteSetting = \App\Models\WebsiteSetting::first()
 @endphp
 
-@extends('web-views.layouts.app')
+@extends('web.layouts.app')
 @section('title', $websiteSetting->name)
 @section('content')
 
