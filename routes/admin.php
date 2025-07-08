@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\BusinessSetting\WebsiteSettingController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\AboutusController;
 use App\Http\Controllers\Admin\CommentController ;
+use App\Http\Controllers\Admin\GalleryController;
 
 use App\Http\Controllers\Admin\PageBannerController;
 
@@ -36,6 +37,21 @@ Route::prefix('admin')->group(function () {
         Route::get('/dashboard', [AdminAuthController::class, 'dashboard_index'])->name('admin.dashboard');
 
         Route::middleware(['auth.admin'])->name('admin.')->group(function () {
+
+            Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
+            Route::get('/gallery/create', [GalleryController::class, 'create'])->name('gallery.create');
+            Route::post('/gallery/store', [GalleryController::class, 'store'])->name('gallery.store');
+            Route::get('/gallery/edit/{id}', [GalleryController::class, 'edit'])->name('gallery.edit');
+            Route::post('/gallery/update/{id}', [GalleryController::class, 'update'])->name('gallery.update');
+            Route::delete('/gallery/delete/{id}', [GalleryController::class, 'destroy'])->name('gallery.destroy');
+        
+        
+            Route::get('/gallery-categories', [GalleryController::class, 'index_category'])->name('gallery-categories.index');
+            Route::get('/gallery-categories/create', [GalleryController::class, 'create_category'])->name('gallery-categories.create');
+            Route::post('/gallery-categories', [GalleryController::class, 'store_category'])->name('gallery-categories.store');
+            Route::get('/gallery-categories/{galleryCategory}/edit', [GalleryController::class, 'edit_category'])->name('gallery-categories.edit');
+            Route::put('/gallery-categories/{galleryCategory}', [GalleryController::class, 'update_category'])->name('gallery-categories.update');
+            Route::delete('/gallery-categories/{galleryCategory}', [GalleryController::class, 'destroycategory'])->name('gallery-categories.destroy');
             Route::get('/page_banners', [PageBannerController::class, 'index'])->name('page_banner.index');
             Route::get('/page_banners/{id}/edit', [PageBannerController::class, 'edit'])->name('page_banner.edit');
             Route::put('/page_banners/{id}', [PageBannerController::class, 'update'])->name('page_banner.update');
@@ -86,6 +102,9 @@ Route::prefix('admin')->group(function () {
             Route::post('contacts/{id}/reply', 'reply_user')->name('admin.contacts.reply');
         });
 
+
+
+      
 
         Route::prefix('business-setting')->name('admin.business-setting.')->group(function () {
             Route::controller(BusinessPagesController::class)->group(function () {

@@ -38,6 +38,32 @@
 
                     </ul>
                 </li>
+                <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="bx bx-folder"></i>
+                            <span key="t-ecommerce">Gallery Category Management</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li><a href="{{ route('admin.gallery-categories.index') }}" key="t-products"><i
+                                        class="bx bx-list-ul"></i> Category List</a></li>
+                            <li><a href="{{ route('admin.gallery-categories.create') }}" key="t-products"><i
+                                        class="bx bx-plus"></i> Add Category</a></li>
+                        </ul>
+                    </li>
+                <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="bx bx-images"></i>
+                            <span key="t-ecommerce">Gallery Management</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li><a href="{{ route('admin.gallery.index') }}" key="t-products"><i
+                                        class="bx bx-list-ul"></i> Gallery List</a></li>
+                            <li><a href="{{ route('admin.gallery.create') }}" key="t-products"><i
+                                        class="bx bx-plus"></i> Add Gallery</a></li>
+                        </ul>
+                    </li>
+
+                    
 
                 <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
