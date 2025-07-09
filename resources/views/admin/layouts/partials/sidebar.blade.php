@@ -25,6 +25,18 @@
                                     class="bx bx-plus"></i> Add Category</a></li>
                     </ul>
                 </li>
+                 <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="bx bx-wrench"></i>
+                            <span key="t-ecommerce">Services Management</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li><a href="{{ route('admin.steps.index') }}" key="t-products"><i
+                                        class="bx bx-list-ul"></i> Services List</a></li>
+                            <li><a href="{{ route('admin.steps.create') }}" key="t-products"><i
+                                        class="bx bx-plus"></i> Add Service</a></li>
+                        </ul>
+                    </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-news"></i>

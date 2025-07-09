@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\AboutusController;
 use App\Http\Controllers\Admin\CommentController ;
 use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\StepController;
 
 use App\Http\Controllers\Admin\PageBannerController;
 
@@ -37,6 +38,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/dashboard', [AdminAuthController::class, 'dashboard_index'])->name('admin.dashboard');
 
         Route::middleware(['auth.admin'])->name('admin.')->group(function () {
+            Route::resource('steps', StepController::class);
 
             Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
             Route::get('/gallery/create', [GalleryController::class, 'create'])->name('gallery.create');
