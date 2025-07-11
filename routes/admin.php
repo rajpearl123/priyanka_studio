@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\AboutusController;
 use App\Http\Controllers\Admin\CommentController ;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\StepController;
+use App\Http\Controllers\Admin\TestimonialController;
 
 use App\Http\Controllers\Admin\PageBannerController;
 
@@ -103,6 +104,8 @@ Route::prefix('admin')->group(function () {
             Route::post('reply/{id}', 'reply')->name('admin.reply');
             Route::post('contacts/{id}/reply', 'reply_user')->name('admin.contacts.reply');
         });
+
+        Route::resource('testimonials', TestimonialController::class);
 
 
 

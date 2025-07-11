@@ -171,6 +171,21 @@
                         </ul>
                     </li>
                 @endif
+
+                @if ($admin && $admin->isSuperAdmin())
+                    <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="bx bx-star"></i>
+                            <span key="t-ecommerce">Testimonial Management</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li><a href="{{ route('testimonials.index') }}" key="t-products"><i
+                                        class="bx bx-list-ul"></i> Testimonial List</a></li>
+                            <li><a href="{{ route('testimonials.create') }}" key="t-products"><i
+                                        class="bx bx-plus"></i> Add Testimonial</a></li>
+                        </ul>
+                    </li>
+                @endif
                 {{-- @if ($admin && $admin->isSuperAdmin())
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -269,20 +284,7 @@
                         </ul>
                     </li>
                 @endif
-                @if ($admin && $admin->isSuperAdmin())
-                    <li>
-                        <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="bx bx-star"></i>
-                            <span key="t-ecommerce">Testimonial Management</span>
-                        </a>
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="{{ route('admin.testimonials.index') }}" key="t-products"><i
-                                        class="bx bx-list-ul"></i> Testimonial List</a></li>
-                            <li><a href="{{ route('admin.testimonials.create') }}" key="t-products"><i
-                                        class="bx bx-plus"></i> Add Testimonial</a></li>
-                        </ul>
-                    </li>
-                @endif
+                
                 @if ($admin && $admin->isSuperAdmin())
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">

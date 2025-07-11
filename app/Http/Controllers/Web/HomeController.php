@@ -21,6 +21,8 @@ use App\Models\Chooseus;
 use Illuminate\Support\Facades\Log;
 use App\Models\Blog;
 use App\Models\BlogCategory;
+use App\Models\Testimonial;
+
 
 use App\Models\Step;
 use App\Models\Gallery;
@@ -35,8 +37,10 @@ class HomeController extends Controller
         $contactInfo = ContactInfo::first();
         $banners = Banner::all();
         $services = Step::all();
+        $section = Aboutus::first();
+        $testimonials = Testimonial::all();
 
-        return view('welcome', compact('contactInfo', 'banners','services'));
+        return view('welcome', compact('contactInfo', 'banners','services', 'section', 'testimonials'));
     }
 
     public function about_us()
