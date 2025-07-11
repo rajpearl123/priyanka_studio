@@ -100,73 +100,24 @@
                     <div class="pd-bottom-100">
                         <div class="row">
                             <!-- Iconbox -->
-                            <div class="col-md-3 wow fadeInLeft">
-                                <div class="wptb-icon-box6 mb-md-0 active highlight">
-                                    <div class="wptb-item--inner">
-                                        <div class="wptb-item--icon">
-                                            <img src="{{ asset('assets/images/icon-1-2.svg') }}" alt="img">
-
-                                        </div>
-                                        <div class="wptb-item--holder">
-                                            <h4 class="wptb-item--title"><a href="service-details.html">Wedding
-                                                    Photography</a></h4>
-                                            <p class="wptb-item--description">The talent at Priyanka runs wide range of
-                                                services. Across many markets, geographies</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Iconbox -->
-                            <div class="col-md-3 wow fadeInLeft">
-                                <div class="wptb-icon-box6 mb-md-0">
-                                    <div class="wptb-item--inner">
-                                        <div class="wptb-item--icon">
-                                            <img src="{{ asset('assets/images/icon-2-2.svg') }}" alt="img">
-                                        </div>
-                                        <div class="wptb-item--holder">
-                                            <h4 class="wptb-item--title"><a href="service-details.html">Drone
-                                                    Cinematography</a></h4>
-                                            <p class="wptb-item--description">The talent at Priyanka runs wide range of
-                                                services. Across many markets, geographies</p>
+                            @foreach ($services as $key => $service)
+                                <div class="col-md-3 wow fadeInLeft">
+                                    <div class="wptb-icon-box6 mb-md-0 {{ $key == 0 ? 'active highlight' : '' }}">
+                                        <div class="wptb-item--inner">
+                                            <div class="wptb-item--icon">
+                                                <img src="{{ asset($service->image) }}" alt="img">
+                                            </div>
+                                            <div class="wptb-item--holder">
+                                                <h4 class="wptb-item--title"><a
+                                                        href="">{{ $service->title }}</a>
+                                                </h4>
+                                                <p class="wptb-item--description">{{ $service->description }}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <!-- Iconbox -->
-                            <div class="col-md-3 wow fadeInLeft">
-                                <div class="wptb-icon-box6 mb-md-0">
-                                    <div class="wptb-item--inner">
-                                        <div class="wptb-item--icon">
-                                            <img src="{{ asset('assets/images/icon-3-2.svg') }}" alt="img">
-                                        </div>
-                                        <div class="wptb-item--holder">
-                                            <h4 class="wptb-item--title"><a href="service-details.html">Wedding
-                                                    Cinematography</a></h4>
-                                            <p class="wptb-item--description">The talent at Priyanka runs wide range of
-                                                services. Across many markets, geographies</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Iconbox -->
-                            <div class="col-md-3 wow fadeInLeft">
-                                <div class="wptb-icon-box6 mb-md-0">
-                                    <div class="wptb-item--inner">
-                                        <div class="wptb-item--icon">
-                                            <img src="{{ asset('assets/images/icon-4-2.svg') }}" alt="img">
-                                        </div>
-                                        <div class="wptb-item--holder">
-                                            <h4 class="wptb-item--title"><a href="service-details.html">Personal Portfolio
-                                                    Shoo</a></h4>
-                                            <p class="wptb-item--description">The talent at Priyanka runs wide range of
-                                                services. Across many markets, geographies</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+                           
                         </div>
                     </div>
 

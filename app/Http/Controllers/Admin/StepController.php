@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Models\Step;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 
 
 class StepController extends Controller
@@ -67,9 +68,10 @@ class StepController extends Controller
     // Update the specified step
     public function update(Request $request, Step $step)
     {
+        // dd($request->all());
         $request->validate([
             'title' => 'required|string|max:255',
-            'image' => 'nullable|image|mimes:svg|max:2048',
+            // 'image' => 'nullable|image|mimes:svg|max:2048',
             'step_count' => 'nullable|integer',
             'description' => 'nullable|string',
         ]);
@@ -87,6 +89,7 @@ class StepController extends Controller
             $image->move(public_path('steps'), $imageName);
             $step->image = 'steps/' . $imageName;
         }
+        // dd($request->all());
 
         $step->update([
             'title' => $request->title,

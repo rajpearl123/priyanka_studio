@@ -20,6 +20,11 @@ use App\Models\WhyChooseUs;
 use App\Models\Chooseus;
 use Illuminate\Support\Facades\Log;
 use App\Models\Blog;
+use App\Models\BlogCategory;
+
+use App\Models\Step;
+use App\Models\Gallery;
+
 
 use Illuminate\Http\Request;
 
@@ -29,7 +34,9 @@ class HomeController extends Controller
     {
         $contactInfo = ContactInfo::first();
         $banners = Banner::all();
-        return view('welcome', compact('contactInfo', 'banners'));
+        $services = Step::all();
+
+        return view('welcome', compact('contactInfo', 'banners','services'));
     }
 
     public function about_us()
@@ -43,16 +50,39 @@ class HomeController extends Controller
     }
 
 
-    public function gallery()
+    public function gallery( )
     {
-        return view('web.gallery');
+        $gallery = Gallery::with('category')->orderBy('created_at', 'desc')->paginate(12);
+        $galleryCategories = DB::table('gallery_categories')->get();
+       
+        return view('web.gallery', compact('gallery', 'galleryCategories'));
     }
 
-    public function blog()
+    // public function blog()
+    // {
+    //     $blog = Blog::orderBy('publish_date', 'desc')->paginate(9);
+    //     return view('web.blog', compact('blog'));
+    // }
+
+    public function blog($category)
     {
-        $blog = Blog::orderBy('publish_date', 'desc')->paginate(9);
-        return view('web.blog', compact('blog'));
+        $categorySlug = $category;
+        
+        $query = Blog::with('category')->orderBy('publish_date', 'desc');
+        
+        if ($categorySlug) {
+            $category = BlogCategory::where('name', $categorySlug)->first();
+            if ($category) {
+                $query->where('blog_category_id', $category->id);
+            }
+        }
+        
+        $blog = $query->paginate(9);
+        $blogCategories = BlogCategory::all();
+        
+        return view('web.blog', compact('blog', 'blogCategories', 'categorySlug'));
     }
+
 
     public function blogDetails()
     {
